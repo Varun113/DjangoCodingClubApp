@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="alert alert-info">
+        Thanks for sending your feedback!! 
+    </div>
+    <div class="text-center">
+            <button  class="btn btn-info" style="border-radius: 35px;"><a style="text-decoration: none; color: white;"
+              class="mr-2 mt-2" href="{% url 'blog-home' %}">Go Back To Home Page</a></button> 
+            </div>
+{% endblock content %}

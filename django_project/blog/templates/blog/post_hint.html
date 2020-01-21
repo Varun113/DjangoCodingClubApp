@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      
+      <h2 class="article-title">{{ object.hint }}</h2>
+    </div>
+  
+  </article>
+  <div class="text-center">
+    <button  class="btn btn-info" style="border-radius: 35px;"><a style="text-decoration: none; color: white;"
+      class="mr-2 mt-2" href="{% url 'post-detail' post.id %}">Go Back To The Problem Statement</a></button> 
+    </div>
+ 
+{% endblock content %}

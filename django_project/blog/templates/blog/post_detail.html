@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+
+      </div>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p class="article-content">{{ object.content }}</p>
+      {% if object.author == user %}
+      <div>
+        <a class="btn btn-info btn-sm btn-block mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-danger btn-sm btn-block mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+      </div>
+    {% endif %}
+    </div>
+  
+  </article>
+  <article>
+  <pre>Try solving on your own before you view the hint!!</pre>
+    <div class="text-center">
+      <button  class="btn btn-info" style="border-radius: 35px;"><a style="text-decoration: none; color: white;"
+        class="mr-2 mt-2" href="{% url 'post-hint' post.id %}">View Hint</a></button> 
+      </div>
+    </article>
+{% endblock content %}
